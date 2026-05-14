@@ -27,7 +27,7 @@
 
 <!-- 📸 IMAGE PLACEHOLDER 3: Architecture Compare Modal -->
 <!-- Show the bar chart comparing different architectural configurations -->
-![Architecture Comparison](analysis.png)
+![Architecture Comparison](analysis..png)
 
 ---
 
