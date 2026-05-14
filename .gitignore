@@ -1,0 +1,28 @@
+# Build artifacts
+sim
+obj-intel64/
+*.so
+*.o
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Frontend
+node_modules/
+.next/
+out/
+build/
+.vercel
+
+# Trace data
+saved_traces/
+trace.txt
+dictionary.txt
+result.json
+
+# OS files
+.DS_Store
+Thumbs.db

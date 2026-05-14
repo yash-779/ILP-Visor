@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #0a0a12;
+  color: #e2e8f0;
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbars ───────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #1e1e30; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #2a2a40; }
+
+/* ── Glass card ───────────────────────────────────────────────────── */
+.glass {
+  background: rgba(14, 14, 24, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  transition: border-color 0.2s ease;
+}
+.glass:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Header Icon ──────────────────────────────────────────────────── */
+.header-icon-wrapper {
+  padding: 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(99,102,241,0.15));
+  border: 1px solid rgba(124,58,237,0.3);
+  box-shadow: 0 0 20px rgba(124,58,237,0.1);
+}
+
+/* ── Stat Pills (header) ─────────────────────────────────────────── */
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.stat-pill span { opacity: 0.6; }
+.stat-pill b { font-weight: 700; }
+
+.stat-pill-purple {
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.25);
+  color: #a78bfa;
+}
+.stat-pill-blue {
+  background: rgba(14,165,233,0.1);
+  border: 1px solid rgba(14,165,233,0.2);
+  color: #38bdf8;
+}
+.stat-pill-indigo {
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  color: #818cf8;
+}
+.stat-pill-red {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  color: #f87171;
+}
+
+/* ── Pipeline stage badges ────────────────────────────────────────── */
+.stage-fetch   { background: rgba(14,165,233,0.12); border-color: #0ea5e9; color: #0ea5e9; }
+.stage-issue   { background: rgba(245,158,11,0.12); border-color: #f59e0b; color: #f59e0b; }
+.stage-execute { background: rgba(16,185,129,0.12); border-color: #10b981; color: #10b981; }
+.stage-retire  { background: rgba(99,102,241,0.12); border-color: #6366f1; color: #6366f1; }
+.stage-waste   { background: rgba(239,68,68,0.1);   border-color: #ef4444; color: #ef4444; }
+
+/* ── Pulse animation for superscalar dispatch ─────────────────────── */
+@keyframes superscalar-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(124,58,237,0.4); }
+  50%      { box-shadow: 0 0 0 5px rgba(124,58,237,0); }
+}
+.pulse-superscalar { animation: superscalar-pulse 0.6s ease-in-out 2; }
+
+/* ── Forwarding glow ──────────────────────────────────────────────── */
+@keyframes fwd-glow {
+  0%,100% { box-shadow: 0 0 0 0 rgba(236,72,153,0.4); }
+  50%      { box-shadow: 0 0 0 5px rgba(236,72,153,0); }
+}
+.pulse-forward { animation: fwd-glow 0.6s ease-in-out 2; }
+
+/* ── Shimmer Skeleton Loader ──────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 280px;
+}
+
+.shimmer-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(124,58,237,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(124,58,237,0.25), transparent);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+.shimmer-bar-1 { width: 100%; animation-delay: 0s; }
+.shimmer-bar-2 { width: 75%; animation-delay: 0.15s; }
+.shimmer-bar-3 { width: 50%; animation-delay: 0.3s; }
+
+/* ── Custom Scrubber (Range Input) ────────────────────────────────── */
+.scrubber-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.08);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.scrubber-input:hover {
+  background: rgba(255,255,255,0.12);
+}
+.scrubber-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #7c3aed;
+  border: 2px solid #a78bfa;
+  cursor: grab;
+  box-shadow: 0 0 8px rgba(124,58,237,0.4);
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.scrubber-input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(124,58,237,0.6);
+}
+.scrubber-input::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+.scrubber-input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #7c3aed;
+  border: 2px solid #a78bfa;
+  cursor: grab;
+  box-shadow: 0 0 8px rgba(124,58,237,0.4);
+}
+
+/* ── Border token ─────────────────────────────────────────────────── */
+.border-border { border-color: rgba(255,255,255,0.06); }
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .grid-cols-2 { grid-template-columns: 1fr !important; }
+  .grid-cols-3 { grid-template-columns: 1fr !important; }
+  .grid-cols-5 { grid-template-columns: repeat(2, 1fr) !important; }
+  .stat-pill { font-size: 10px; padding: 4px 8px; }
+}
