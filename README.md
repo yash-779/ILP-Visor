@@ -1,9 +1,8 @@
-
 # ILP-Visor: Cycle-Accurate ILP Simulator & Visualizer
 
 <!-- 📸 MAIN HERO IMAGE PLACEHOLDER -->
 <!-- Replace the link below with a high-quality screenshot of your entire dashboard! -->
-![ILP-Visor Dashboard](<img width="1366" height="768" alt="Screenshot (775)" src="https://github.com/user-attachments/assets/ffee8f63-0d80-4ab9-ae12-383534b8dca1" />
+![ILP-Visor Dashboard](<img width="1366" height="768" alt="Screenshot (775)" src="https://github.com/user-attachments/assets/380de698-c804-40ea-a1df-d2fde22f0697" />
 )
 
 **ILP-Visor** is a comprehensive, standalone Instruction Level Parallelism (ILP) simulation framework. It combines dynamic binary instrumentation, an out-of-order CPU simulator, and a modern web-based analytics dashboard to visualize hardware execution, pipeline hazards, and performance bottlenecks.
@@ -23,15 +22,14 @@
 
 
 
-
 <!-- 📸 GIF / IMAGE PLACEHOLDER 2: Pipeline Visualizer -->
 <!-- Zoom in on the pipeline visualization showing stalls and flushes -->
-![Pipeline Visualization](<img width="480" height="270" alt="gif" src="https://github.com/user-attachments/assets/a4cd9869-625f-4bdc-bc5e-8380658b10fb" />
+![Pipeline Visualization](<img width="480" height="270" alt="gif" src="https://github.com/user-attachments/assets/aa60b825-4f19-42f2-85ee-2b39200c3e62" />
 )
 
 <!-- 📸 IMAGE PLACEHOLDER 3: Architecture Compare Modal -->
 <!-- Show the bar chart comparing different architectural configurations -->
-![Architecture Comparison](<img width="1366" height="768" alt="Screenshot (819)" src="https://github.com/user-attachments/assets/37075853-093c-4208-ba21-bab9d44e5e5e" />
+![Architecture Comparison](<img width="1366" height="768" alt="Screenshot (819)" src="https://github.com/user-attachments/assets/c0f6d3f6-bed2-4ead-9022-fca09812f4c7" />
 )
 
 ---
@@ -87,4 +85,3 @@ This will boot up both the Python backend and the Next.js frontend simultaneousl
 
 Open your browser and navigate to **`http://localhost:3000`**.
 Paste your C/C++ code into the editor, select your CPU architecture configurations, and click simulate!
-<img width="1366" height="768" alt="Screenshot (775)" src="https://github.com/user-attachments/assets/b83e185c-ed4c-41fa-8ddc-aa70f999ea7d" />
