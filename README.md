@@ -2,8 +2,7 @@
 
 <!-- 📸 MAIN HERO IMAGE PLACEHOLDER -->
 <!-- Replace the link below with a high-quality screenshot of your entire dashboard! -->
-![ILP-Visor Dashboard](<img width="1366" height="768" alt="Screenshot (775)" src="https://github.com/user-attachments/assets/2e7f0e7b-371e-44ee-aa16-56805734af93" />
-)
+![ILP-Visor Dashboard](dashboard.png)
 
 **ILP-Visor** is a comprehensive, standalone Instruction Level Parallelism (ILP) simulation framework. It combines dynamic binary instrumentation, an out-of-order CPU simulator, and a modern web-based analytics dashboard to visualize hardware execution, pipeline hazards, and performance bottlenecks.
 
@@ -24,12 +23,11 @@
 
 <!-- 📸 GIF / IMAGE PLACEHOLDER 2: Pipeline Visualizer -->
 <!-- Zoom in on the pipeline visualization showing stalls and flushes -->
-![Pipeline Visualization](<img width="480" height="270" alt="gif" src="https://github.com/user-attachments/assets/4c28fa5c-fa38-4795-b879-02931add63ae" />)
+![Pipeline Visualization](workflow.gif)
 
 <!-- 📸 IMAGE PLACEHOLDER 3: Architecture Compare Modal -->
 <!-- Show the bar chart comparing different architectural configurations -->
-![Architecture Comparison](<img width="1366" height="768" alt="Screenshot (819)" src="https://github.com/user-attachments/assets/86c1d720-32c4-4085-9ff2-a5fb7c3a17f4" />
-)
+![Architecture Comparison](analysis.png)
 
 ---
 
