@@ -1,42 +1,42 @@
 "use client";
 import { useState, useCallback, useMemo } from "react";
-import CodeEditorPanel     from "@/components/CodeEditorPanel";
+import CodeEditorPanel from "@/components/CodeEditorPanel";
 import SourceAssemblyMapper from "@/components/SourceAssemblyMapper";
-import PlaybackControlBar  from "@/components/PlaybackControlBar";
-import PipelineVisualizer  from "@/components/PipelineVisualizer";
-import InstructionWindow   from "@/components/InstructionWindow";
-import AnalyticsDashboard  from "@/components/AnalyticsDashboard";
+import PlaybackControlBar from "@/components/PlaybackControlBar";
+import PipelineVisualizer from "@/components/PipelineVisualizer";
+import InstructionWindow from "@/components/InstructionWindow";
+import AnalyticsDashboard from "@/components/AnalyticsDashboard";
 import ArchitectureCompareModal from "@/components/ArchitectureCompareModal";
 import { Cpu, Zap, Activity, AlertTriangle } from "lucide-react";
 
 
 
 export type SimInstruction = {
-  inst_id:                    number;
-  pc:                         string;
-  opcode:                     string;
-  fetch_cycle:                number;
-  issue_cycle:                number;
-  finish_cycle:               number;
-  retire_cycle:               number;
-  is_speculative_waste:       boolean;
-  is_mem_stalled:             boolean;
+  inst_id: number;
+  pc: string;
+  opcode: string;
+  fetch_cycle: number;
+  issue_cycle: number;
+  finish_cycle: number;
+  retire_cycle: number;
+  is_speculative_waste: boolean;
+  is_mem_stalled: boolean;
   forwarded_data_from_inst_ids: number[];
-  stalled_on_reg:             string;
-  stalled_on_inst_id:         number;
-  stalled_on_mem_addr:        string;
-  is_branch:                  boolean;
-  predicted_next_pc:          string;
-  actual_next_pc:             string;
+  stalled_on_reg: string;
+  stalled_on_inst_id: number;
+  stalled_on_mem_addr: string;
+  is_branch: boolean;
+  predicted_next_pc: string;
+  actual_next_pc: string;
 };
 
 export type SimResult = {
   global_stats: {
-    total_cycles:       number;
-    actual_retired:     number;
-    total_executed:     number;
+    total_cycles: number;
+    actual_retired: number;
+    total_executed: number;
     wasted_speculative: number;
-    final_ilp:          number;
+    final_ilp: number;
     config: { pipelining: boolean; forwarding: boolean; reorder: boolean; branch_prediction: boolean };
   };
   dictionary: Record<string, { opcode: string; reads: string[]; writes: string[] }>;
@@ -45,17 +45,17 @@ export type SimResult = {
 
 export type ApiResponse = {
   source_code: string;
-  source_map:  Record<string, { file: string; line: number }>;
-  simulation:  SimResult;
+  source_map: Record<string, { file: string; line: number }>;
+  simulation: SimResult;
 };
 
 
 export type CycleState = {
-  fetched:  SimInstruction[];
-  issued:   SimInstruction[];
+  fetched: SimInstruction[];
+  issued: SimInstruction[];
   executing: SimInstruction[];
-  retired:  SimInstruction[];
-  wasted:   SimInstruction[];
+  retired: SimInstruction[];
+  wasted: SimInstruction[];
   issuedIds: Set<number>;
   forwardedIds: Set<number>;
   robInsts: SimInstruction[];
@@ -79,23 +79,23 @@ int main() {
 }`;
 
 export default function Home() {
-  const [code,       setCode]       = useState(DEFAULT_CODE);
+  const [code, setCode] = useState(DEFAULT_CODE);
   const [pipelining, setPipelining] = useState(true);
   const [forwarding, setForwarding] = useState(true);
-  const [reorder,    setReorder]    = useState(true);
-  const [bp,         setBp]         = useState(true);
+  const [reorder, setReorder] = useState(true);
+  const [bp, setBp] = useState(true);
 
-  const [loading,    setLoading]    = useState(false);
-  const [error,      setError]      = useState<string | null>(null);
-  const [result,     setResult]     = useState<ApiResponse | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<ApiResponse | null>(null);
 
   const [compareModalOpen, setCompareModalOpen] = useState(false);
   const [compareData, setCompareData] = useState<any[] | null>(null);
   const [compareLoading, setCompareLoading] = useState(false);
   const [compareError, setCompareError] = useState<string | null>(null);
 
-  const [currentCycle,   setCurrentCycle]   = useState(0);
-  const [hoveredAsmPc,   setHoveredAsmPc]   = useState<string | null>(null);
+  const [currentCycle, setCurrentCycle] = useState(0);
+  const [hoveredAsmPc, setHoveredAsmPc] = useState<string | null>(null);
 
   const totalCycles = result?.simulation.global_stats.total_cycles ?? 0;
 
@@ -238,13 +238,13 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col gap-5 p-5" style={{ background: "#0a0a12" }}>
 
-      {}
+      { }
       <header className="flex items-center gap-4">
         <div className="header-icon-wrapper">
           <Cpu size={24} className="text-purple-400" />
         </div>
         <div>
-          <h1 className="text-xl font-bold text-white leading-tight tracking-tight">ILP Simulator</h1>
+          <h1 className="text-xl font-bold text-white leading-tight tracking-tight">ILP Visor</h1>
           <p className="text-xs text-slate-500">Cycle-Accurate x86-64 Out-of-Order Execution Visualizer</p>
         </div>
         {result && (
@@ -272,15 +272,15 @@ export default function Home() {
         )}
       </header>
 
-      {}
+      { }
       <div className="grid grid-cols-2 gap-5" style={{ height: "380px" }}>
         <CodeEditorPanel
           code={code}
           setCode={setCode}
           pipelining={pipelining} setPipelining={setPipelining}
           forwarding={forwarding} setForwarding={setForwarding}
-          reorder={reorder}       setReorder={setReorder}
-          bp={bp}                 setBp={setBp}
+          reorder={reorder} setReorder={setReorder}
+          bp={bp} setBp={setBp}
           onRun={runSimulation}
           onCompare={runCompare}
           loading={loading}
@@ -302,14 +302,14 @@ export default function Home() {
 
       {result && (
         <>
-          {}
+          { }
           <PlaybackControlBar
             currentCycle={currentCycle}
             setCurrentCycle={setCurrentCycle}
             totalCycles={totalCycles}
           />
 
-          {}
+          { }
           <div className="w-full">
             <PipelineVisualizer
               cycleState={cycleState}
@@ -317,7 +317,7 @@ export default function Home() {
             />
           </div>
 
-          {}
+          { }
           <AnalyticsDashboard
             instructions={result.simulation.instructions}
             globalStats={result.simulation.global_stats}
@@ -350,7 +350,7 @@ export default function Home() {
         </div>
       )}
 
-      {}
+      { }
       <ArchitectureCompareModal
         isOpen={compareModalOpen}
         onClose={() => setCompareModalOpen(false)}

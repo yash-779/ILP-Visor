@@ -46,7 +46,7 @@ log.info(f"PIN_BIN     : {PIN_BIN}  (exists={PIN_BIN.exists()})")
 log.info(f"PIN_TOOL    : {PIN_TOOL}")
 
 
-app = FastAPI(title="ILP Simulator API")
+app = FastAPI(title="ILP Visor API")
 
 app.add_middleware(
     CORSMiddleware,
