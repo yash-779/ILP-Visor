@@ -1,8 +1,10 @@
+
 # ILP-Visor: Cycle-Accurate ILP Simulator & Visualizer
 
 <!-- 📸 MAIN HERO IMAGE PLACEHOLDER -->
 <!-- Replace the link below with a high-quality screenshot of your entire dashboard! -->
-![ILP-Visor Dashboard](https://via.placeholder.com/1000x500.png?text=Paste+Your+Dashboard+Screenshot+Here)
+![ILP-Visor Dashboard](<img width="1366" height="768" alt="Screenshot (775)" src="https://github.com/user-attachments/assets/ffee8f63-0d80-4ab9-ae12-383534b8dca1" />
+)
 
 **ILP-Visor** is a comprehensive, standalone Instruction Level Parallelism (ILP) simulation framework. It combines dynamic binary instrumentation, an out-of-order CPU simulator, and a modern web-based analytics dashboard to visualize hardware execution, pipeline hazards, and performance bottlenecks.
 
@@ -19,17 +21,18 @@
 
 ## 🎥 Application Demo
 
-<!-- 📸 GIF PLACEHOLDER 1: Overall Workflow -->
-<!-- Show the user pasting code, selecting toggles, and hitting "Simulate" -->
-![ILP-Visor Workflow Demo](https://via.placeholder.com/800x400.gif?text=Paste+Your+Workflow+GIF+Here)
+
+
 
 <!-- 📸 GIF / IMAGE PLACEHOLDER 2: Pipeline Visualizer -->
 <!-- Zoom in on the pipeline visualization showing stalls and flushes -->
-![Pipeline Visualization](https://via.placeholder.com/800x300.png?text=Paste+Pipeline+Screenshot/GIF+Here)
+![Pipeline Visualization](<img width="480" height="270" alt="gif" src="https://github.com/user-attachments/assets/a4cd9869-625f-4bdc-bc5e-8380658b10fb" />
+)
 
 <!-- 📸 IMAGE PLACEHOLDER 3: Architecture Compare Modal -->
 <!-- Show the bar chart comparing different architectural configurations -->
-![Architecture Comparison](https://via.placeholder.com/800x300.png?text=Paste+Architecture+Compare+Screenshot+Here)
+![Architecture Comparison](<img width="1366" height="768" alt="Screenshot (819)" src="https://github.com/user-attachments/assets/37075853-093c-4208-ba21-bab9d44e5e5e" />
+)
 
 ---
 
